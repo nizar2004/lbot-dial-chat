@@ -1,0 +1,4 @@
+# Universal Whitelist for ALL commands
+# Format: uid:name (one per line)
+
+3213:waa salam
