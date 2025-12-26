@@ -98,7 +98,7 @@ def get_player_name_enhanced(uid):
 # UNIVERSAL WHITELIST SYSTEM (ONE LIST FOR ALL COMMANDS)
 # ===========================================
 WHITELIST_FILE = "universal_whitelist.txt"
-MASTER_ADMINS = ["14169932359"]  # Your master UID - CHANGE THIS!
+MASTER_ADMINS = ["369560139"]  # Your master UID - CHANGE THIS!
 
 def load_universal_whitelist():
     """Load universal whitelist from file"""
