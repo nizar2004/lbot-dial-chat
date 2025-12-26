@@ -2279,34 +2279,7 @@ async def TcPChaT(ip, port, AutHToKen, key, iv, LoGinDaTaUncRypTinG, ready_event
 
 
                         if inPuTMsG.startswith(("/6")):
-                            current_chat_type = response.Data.chat_type
-                            user_uid = str(uid)
                             
-                            # Check if in guild chat
-                            if current_chat_type == 1:
-                                # GUILD CHAT - Check UID from UNIVERSAL whitelist
-                                allowed = is_uid_allowed_in_universal(user_uid)
-                                
-                                if not allowed:
-                                    # Get player name if available
-                                    players = get_universal_whitelist_with_names()
-                                    player_name = players.get(user_uid, "Unknown Player")
-                                    # Show only last 6 digits
-                                    short_uid = user_uid[-6:] if len(user_uid) > 6 else user_uid
-
-                                    msg = f"""[FF0000]Access denied in guild. 
-                                    {player_name} [UID: ...{short_uid}]"""
-
-                                    P = await SEndMsG(current_chat_type, msg, uid, chat_id, key, iv)
-                                    await SEndPacKeT(whisper_writer, online_writer, 'ChaT', P)
-                                    continue
-                            
-                            # Get player name for success message
-                            players = get_universal_whitelist_with_names()
-                            player_name = players.get(user_uid, "Player")
-                            
-                            # Show only last 6 digits
-                            short_uid = user_uid[-6:] if len(user_uid) > 6 else user_uid
                             
                             # Send processing message
                             msg = f"Creating 6-player group for {player_name} [UID: ...{short_uid}]..."
