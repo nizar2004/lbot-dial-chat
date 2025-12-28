@@ -15,7 +15,52 @@ import random
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 
+import os
+from flask import Flask
+from threading import Thread
+import asyncio
+import signal
+import sys
+import time
 
+# --- FIX FOR RENDER (DO NOT TOUCH) ---
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "Free Fire Bot is Online!"
+
+def run():
+    # Render uses the PORT environment variable
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host='0.0.0.0', port=port)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.daemon = True
+    t.start()
+# --------------------------------------
+
+# --- YOUR EXISTING IMPORTS ---
+import requests, psutil, jwt, pickle, json, binascii, urllib3, base64, datetime, re, socket, threading, ssl, pytz, aiohttp
+from xC4 import *
+from xHeaders import *
+
+# --- START THE BOT ---
+if __name__ == "__main__":
+    print("Starting Render Web Server...")
+    keep_alive()  # This stops the 'Port Scan Timeout' error
+    
+    print("Starting Free Fire Bot...")
+    # This runs your original bot code
+    try:
+        # Assuming your main bot loop is called 'StarTinG' or similar
+        # If your script just runs line-by-line, the code continues below
+        pass 
+    except Exception as e:
+        print(f"Error: {e}")
+
+    # PASTE THE REST OF YOUR ORIGINAL CODE BELOW THIS LINE
 
 
 
